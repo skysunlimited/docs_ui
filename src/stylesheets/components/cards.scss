@@ -1,0 +1,125 @@
+.card {
+  margin-top: 2em;
+  background: var(--core-violet-3);
+  border-radius: var(--border-radius);
+  width: 230px;
+  min-height: 280px;
+  display: inline-flex;
+  flex-direction: column;
+  color: white;
+  box-shadow: rgba(203, 203, 203, 0.81) 0px 4px 5px 0px;
+  position: relative;
+  padding: 1.2em;
+
+  &.card-contracts {
+    --card-icon: url(../images/contracts_white.svg);
+    background-image: linear-gradient(45deg, #6746d6 0%, #a134d1 100%);
+    box-shadow: 0 8px 14px 0 rgba(60, 60, 60, 0.09);
+    border-radius: var(--border-radius);
+  }
+
+  &.card-sdk {
+    --card-icon: url(../images/sdk_white.svg);
+    background-image: linear-gradient(-134deg, #3677ff 0%, #1ecff7 100%);
+    box-shadow: 0 8px 14px 0 rgba(60, 60, 60, 0.09);
+    border-radius: var(--border-radius);
+  }
+
+  &.card-starter-kits {
+    --card-icon: url(../images/kit_white.svg);
+    background-image: linear-gradient(-135deg, #00e1d4 0%, #00c7f2 100%);
+    box-shadow: 0 8px 14px 0 rgba(60, 60, 60, 0.09);
+    border-radius: var(--border-radius);
+  }
+
+  .title {
+    margin-top: 1.2em;
+    font-family: var(--heading);
+    font-weight: bold;
+    font-size: 1.2em;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &::before {
+        content: "";
+        background-image: var(--card-icon);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 1.5em;
+        height: 1.5em;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: .5em;
+      }
+    }
+  }
+
+  .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &::after {
+    content: "";
+    background-image: url(../images/cards.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 95px;
+    height: 70px;
+    position: absolute;
+    bottom: 30px;
+    right: -20px;
+  }
+
+  & + & {
+    margin-left: 20px;
+  }
+
+  .content {
+    margin-top: 2em;
+    font-size: 0.9em;
+    width: 88%;
+  }
+
+  .card-cta {
+    font-family: var(--heading);
+    font-size: .8em;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      padding: 20px;
+      margin: -20px;
+    }
+  }
+}
+
+@media (max-width: 642px) {
+  .card {
+    display: block;
+    width: 100%;
+    min-height: 150px;
+    margin: 1rem auto;
+    & + & {
+      margin-left: auto;
+    }
+  }
+}
+
+@media (min-width: $mobile-breakpoint) and (max-width: 1120px), (min-width: 642px) and (max-width: 780px) {
+  .card {
+    width: 187px;
+    height: 300px;
+    margin: 1rem auto;
+    & + & {
+      margin-left: 1rem;
+    }
+  }
+}
