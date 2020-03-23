@@ -1,6 +1,6 @@
 {{#if items}}
 <ol class="nav-list">
-  {{#each (content-sort items level)}}
+  {{#each (content-sort items content)}}
   <li class="nav-li" data-depth="{{#if ../level}}{{../level}}{{else}}0{{/if}}" {{#if currentPath}}data-state="expanded"
     {{/if}}>
     {{#if url}}

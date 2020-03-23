@@ -1,10 +1,6 @@
-module.exports = function (array, level) {
-  if (!level) {
-    level = 0;
-  }
-
-  // Don't sort the first level.
-  if (!array || level === 0) {
+module.exports = function (array, content) {
+  // Only sort the Contracts.
+  if (!array || content !== "Contracts") {
     return array;
   }
 
